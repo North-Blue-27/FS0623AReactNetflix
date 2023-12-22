@@ -7,6 +7,7 @@ import MovieGallery from './components/MovieGallery';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
+  
 
   const handleSearch = (term) => {
     setSearchTerm(term);
