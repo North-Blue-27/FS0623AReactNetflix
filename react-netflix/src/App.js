@@ -12,13 +12,22 @@ function App() {
     setSearchTerm(term);
   };
 
+  const handleHomeClick = () => {
+    setSearchTerm('');
+  };
+
   return (
     <div className="App" style={{ backgroundColor: '#221f1f' }}>
-      <MyNav onSearch={handleSearch} />
-      {searchTerm && <MovieGallery title="Search Results" searchTerm={searchTerm} />}
-      <MovieGallery title="Harry Potter" searchTerm="harry potter" />
-      <MovieGallery title="Matrix" searchTerm="matrix" />
-      <MovieGallery title="Star Wars" searchTerm="star wars" />
+      <MyNav onSearch={handleSearch} onHomeClick={handleHomeClick} />
+      {searchTerm ? (
+        <MovieGallery title="Search Results" searchTerm={searchTerm} />
+      ) : (
+        <>
+          <MovieGallery title="Harry Potter" searchTerm="harry potter" />
+          <MovieGallery title="Matrix" searchTerm="matrix" />
+          <MovieGallery title="Star Wars" searchTerm="star wars" />
+        </>
+      )}
       <MyFooter />
     </div>
   );

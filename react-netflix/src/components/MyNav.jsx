@@ -9,6 +9,11 @@ const MyNav = ({ onSearch }) => {
     onSearch(searchTerm); // Passa il termine di ricerca al genitore (App)
   };
 
+  const handleHomeClick = () => {
+    setSearchTerm(''); // Resetta il termine di ricerca quando si fa clic su Home
+    window.location.reload(); // Ricarica la pagina quando si fa clic su Home
+  };
+
   return (
     <Navbar
       expand="lg"
@@ -16,7 +21,7 @@ const MyNav = ({ onSearch }) => {
       className="mb-4"
       style={{ paddingLeft: '20px', paddingRight: '20px', backgroundColor: '#221f1f' }}
     >
-      <Navbar.Brand href="#">
+      <Navbar.Brand href="#" onClick={handleHomeClick}>
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
           alt="Netflix Logo"
@@ -27,7 +32,7 @@ const MyNav = ({ onSearch }) => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link href="#" className="text-white">Home</Nav.Link>
+          <Nav.Link href="#" className="text-white" onClick={handleHomeClick}>Home</Nav.Link>
           <Nav.Link href="#" className="text-white">TV Shows</Nav.Link>
           <Nav.Link href="#" className="text-white">Movies</Nav.Link>
           <Nav.Link href="#" className="text-white">New & Popular</Nav.Link>
@@ -49,8 +54,6 @@ const MyNav = ({ onSearch }) => {
 }
 
 export default MyNav;
-
-
 
 
 
