@@ -5,3 +5,28 @@
 .card:hover {
   transform: scale(1.1);
 }
+
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.comment-textarea {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.comment-button {
+  background-color: #d81f26;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+/* Stile per il bordo della card del film selezionato */
+.selected .card {
+  border: 2px solid #d81f26;
+}

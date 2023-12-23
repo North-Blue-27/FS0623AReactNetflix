@@ -42,9 +42,11 @@ function App() {
 
   // Static categories
   const categories = [
+    { title: "Scary Movie", searchTerm: "scary movie" },
     { title: "Harry Potter", searchTerm: "harry potter" },
+    { title: "Terminator", searchTerm: "terminator" },
     { title: "Matrix", searchTerm: "matrix" },
-    { title: "Star Wars", searchTerm: "star wars" },
+    { title: "Friday the 13th", searchTerm: "friday the 13th" },
   ];
 
   return (

@@ -96,7 +96,9 @@ const MovieGallery = ({ title, searchTerm }) => {
         {movies.slice(0, 6).map((movie, index) => (
           <div
             key={index}
-            className="col mb-4"
+            className={`col mb-4 ${
+              selectedFilmId === movie.imdbID ? "selected" : ""
+            }`}
             onClick={() => handleFilmClick(movie.imdbID)}
           >
             <div className="card h-100">
@@ -122,13 +124,15 @@ const MovieGallery = ({ title, searchTerm }) => {
               <li key={index}>{comment.comment}</li>
             ))}
           </ul>
-          <form onSubmit={handleSubmitComment}>
+          <form onSubmit={handleSubmitComment} className="comment-form">
             <textarea
               value={newComment}
               onChange={(e) => setNewComment(e.target.value)}
               placeholder="Add a new comment..."
             ></textarea>
-            <button type="submit">Submit</button>
+            <button type="submit" style={{ color: "white", backgroundColor: '#d81f26' }}>
+              Submit
+            </button>
           </form>
         </div>
       )}
