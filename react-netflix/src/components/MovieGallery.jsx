@@ -130,7 +130,10 @@ const MovieGallery = ({ title, searchTerm }) => {
               onChange={(e) => setNewComment(e.target.value)}
               placeholder="Add a new comment..."
             ></textarea>
-            <button type="submit" style={{ color: "white", backgroundColor: '#d81f26' }}>
+            <button
+              type="submit"
+              style={{ color: "white", backgroundColor: "#d81f26" }}
+            >
               Submit
             </button>
           </form>
